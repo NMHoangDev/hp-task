@@ -6,8 +6,6 @@ const { width } = Dimensions.get("window");
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 50,
-    marginHorizontal: 30,
   },
   image: {
     width: "100%",
@@ -40,25 +38,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     borderTopRightRadius: 30,
     borderTopLeftRadius: 30,
-  },
-  footerLink: {
-    color: colors.purple,
-    fontWeight: "bold",
-  },
-  conditionContainer: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  condition: {
-    color: colors.midGrey,
-    fontSize: 12,
-    marginLeft: 6,
-  },
-  subCondition: {
-    color: colors.midGrey,
-    textDecorationLine: "underline",
-    fontSize: 12,
   },
 });
 

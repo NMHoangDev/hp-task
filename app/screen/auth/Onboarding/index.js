@@ -26,6 +26,7 @@ const Onboarding = ({ navigation }) => {
           onPress={() => {
             navigation.navigate("SignUp");
           }}
+          type={"blue"}
         >
           Get Started
         </Button>
