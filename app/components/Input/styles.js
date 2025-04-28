@@ -6,9 +6,16 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightGrey,
     paddingHorizontal: 24,
     paddingVertical: 13,
-    marginVertical: 12,
     borderRadius: 10,
-    color: colors.grey,
+    color: colors.black,
+    marginVertical: 12,
+    fontSize: 15,
+  },
+  outlined: {
+    backgroundColor: colors.white,
+    borderWidth: 1,
+    borderColor: colors.grey,
+    // marginHorizontal: 24,
   },
 });
 

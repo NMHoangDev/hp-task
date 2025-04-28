@@ -1,14 +1,14 @@
 import React from "react";
-import { Text, TextInput } from "react-native";
+import { TextInput } from "react-native";
 import styles from "./styles";
 import colors from "../../constants/color";
 
-const Input = ({ ...props }) => {
+const Input = ({ outlined, ...props }) => {
   return (
     <TextInput
       placeholderTextColor={colors.midGrey}
+      style={[styles.input, outlined ? styles.outlined : {}]}
       {...props}
-      style={styles.input}
     />
   );
 };

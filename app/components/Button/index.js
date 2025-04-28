@@ -1,14 +1,24 @@
 import React from "react";
-import { Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import styles from "./styles";
 
-const Button = ({ onPress, type, children }) => {
+const Button = ({ onPress, type = "primary", children, style }) => {
+  const containerStyle = [
+    styles.container,
+    type === "blue" && styles.blueBg,
+    type === "outline" && styles.outline,
+    style,
+  ];
+
+  const textStyle = [styles.text, type === "outline" && styles.outlineText];
+
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.container, type === "blue" ? styles.blueBg : {}]}
+      activeOpacity={0.85}
+      style={containerStyle}
     >
-      <Text style={styles.text}>{children}</Text>
+      <Text style={textStyle}>{children}</Text>
     </TouchableOpacity>
   );
 };

@@ -1,43 +1,46 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions, Platform } from "react-native";
 import colors from "../../../constants/color";
-import { Dimensions } from "react-native";
-const { width } = Dimensions.get("window");
+
+const { width, height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#f7f8fa", // màu nền nhẹ hiện đại
   },
-  image: {
-    width: "100%",
-    flex: 1,
+  backContainer: {
+    padding: 10,
+    alignSelf: "flex-start",
   },
-  content: {
-    padding: 46,
-    paddingTop: 0,
-    backgroundColor: colors.white,
-    width: width,
+  backIcon: {
+    width: 24,
+    height: 24,
+    tintColor: "#333", // đồng bộ với theme
   },
-  title: {
-    color: colors.black,
-    textAlign: "center",
-    fontWeight: "bold",
-    fontSize: 22,
-    paddingTop: 40,
+  scrollContainer: {
+    paddingHorizontal: 20,
+    paddingBottom: 40,
   },
-  subtitle: {
-    fontSize: 15,
-    color: colors.grey,
-    textAlign: "center",
-    marginVertical: 16,
+  field: {
+    marginBottom: 20,
+    backgroundColor: "#fff",
+    borderRadius: 12,
+    padding: 16,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 8,
+    elevation: 3,
   },
-  footer: {
-    position: "absolute",
-    bottom: 0,
-    height: 50,
-    width: "100%",
-    backgroundColor: colors.white,
-    borderTopRightRadius: 30,
-    borderTopLeftRadius: 30,
+  label: {
+    fontSize: 14,
+    fontWeight: "600",
+    color: "#555",
+    marginBottom: 10,
+  },
+  buttonContainer: {
+    marginTop: 20,
+    alignItems: "center",
   },
 });
 

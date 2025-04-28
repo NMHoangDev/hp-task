@@ -1,27 +1,33 @@
 import { StyleSheet } from "react-native";
-import colors from "../../constants/colors";
+import colors from "../../constants/color";
 
 const styles = StyleSheet.create({
   outlined: {
-    marginVertical: 12,
-    paddingHorizontal: 24,
-    paddingVertical: 13,
-    backgroundColor: colors.white,
-    borderWidth: 1,
-    borderRadius: 10,
+    marginVertical: 8,
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    backgroundColor: "#fff",
+    borderWidth: 1.2,
     borderColor: colors.grey,
-    marginHorizontal: 24,
+    borderRadius: 12,
     flexDirection: "row",
     alignItems: "center",
-  },
-  text: {
-    color: colors.grey,
-    fontSize: 15,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 2, // Android shadow
   },
   icon: {
-    width: 16,
-    height: 16,
-    marginRight: 8,
+    width: 20,
+    height: 20,
+    tintColor: colors.blue,
+    marginRight: 10,
+  },
+  text: {
+    fontSize: 15,
+    color: colors.textDark || "#333",
+    fontWeight: "500",
   },
 });
 
