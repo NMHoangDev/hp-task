@@ -11,14 +11,26 @@ import Home from "./screen/app/Home/index";
 import Tasks from "./screen/app/Tasks/index";
 import AddTask from "./screen/app/AddTask/index";
 import DrawerContent from "./components/DrawerTab/index";
+import { useDispatch } from "react-redux";
+import { setUser } from "./store/user";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 
 const Routes = () => {
-  const [user, setUser] = useState({ name: "Test User" }); // Luôn có user
+  const [userDefault, setUserDefault] = useState({
+    name: "Nguyen Minh Hoang",
+    id: 1,
+  });
+  const dispatch = useDispatch();
+  function onAuthStateChanged(user) {
+    dispatch(setUser(user));
+  }
 
+  useEffect(() => {
+    onAuthStateChanged(userDefault);
+  }, []);
   const Tabs = () => (
     <Tab.Navigator
       screenOptions={{ tabBarShowLabel: false, headerShown: false }}
@@ -58,7 +70,7 @@ const Routes = () => {
     </Tab.Navigator>
   );
 
-  if (user) {
+  if (userDefault) {
     return (
       <Drawer.Navigator
         screenOptions={{ headerShown: false }}
